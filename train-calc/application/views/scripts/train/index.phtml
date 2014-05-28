@@ -1,0 +1,66 @@
+
+
+ <div id="mainContainer">
+	<div id="themeChangerDiv"><label for="ThemeChangerInput">Select Your Theme</label><select id="ThemeChangerInput" name="ThemeChangerInput"><option value="styles1">styles1</option><option value="styles2">styles2</option><option value="styles3">styles3</option></select></div>
+	<h1>Shortest Train Calculator</h1>
+	<p>Please use below form to select two points (to and from). </p>
+	
+	<form id="formCalc" action="/non-ajax-call">
+		<p>Please complete the form below.</p>
+		<div class="cell">
+        <fieldset class="login trainSel">
+			<legend>List of Train Stations</legend>
+			<div>
+				<label for="stations">Stations</label> 
+                <select id="stations" name="stations" multiple>
+                	<option value="1">1</option>
+                	<option value="2">2</option>
+                	<option value="3">3</option>
+                	<option value="4">4</option>
+                	
+                </select>
+			</div>
+		
+		</fieldset>
+        </div>
+        <div class="cell">
+        <fieldset class="contact yourSel trainSel" >
+			<legend>Your Selection</legend>
+			<div>
+				<label for="divSt1">First Station</label> <div id="divSt1" class="divSt">&nbsp;</div>
+			</div>
+			<div>
+				<label for="divSt2">Second Station</label> <div id="divSt2" class="divSt">&nbsp;</div>
+			</div>
+            <div>
+				<label for="divSR">Shortest Route</label> <div id="divSR" class="divSt">&nbsp;</div>
+			</div>
+			
+		</fieldset>
+        </div>
+        <div class="clearboth"></div>
+        
+        <div>
+      
+            <div class="msgCell">
+            <fieldset class="contact msgWindow msgGreen">
+                <legend>Message Window</legend>
+                <div id="respMsg">
+                    Select your First Station
+                </div>
+                
+                
+            </fieldset>
+            </div>
+            
+            <div class="btnContainer"><button value="submit" class="submitBtn" type="submit" id="start-over" onclick="return false"><span>Start Over</span></button></div>
+          </div>
+       <div class="clearboth"></div>
+		<input type="hidden" name="stationA" id="stationA" />
+		<input type="hidden" name="stationB" id="stationB" />
+		<input type="hidden" name="csrfToken" id="csrfToken" value="<?=$this->csrfToken?>" />
+	</form>
+    
+    </div><!-- end of main Container -->
+
+

@@ -1,0 +1,65 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="<?php echo $this->baseUrl(); ?>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+$this->headMeta()->appendName('keywords','train path finder')
+                    ->appendName('description','Calculate Shortest Train Path')
+                    ->appendName('area','general')
+                    ->appendName('author','Asif Javed')
+                    ->appendName('copyright','')
+                    ->appendName('rating','general')
+                    ->appendName('distribution','global')
+                    ->appendName('revisit-after','7 Days')
+                    ->appendName('robots','index,follow')
+                    ->appendHttpEquiv('X-UA-Compatible','IE=7')
+                    ->appendHttpEquiv('content-language','en-GB')
+                    ->appendHttpEquiv('content-type','text/html; charset=utf-8');
+
+echo $this->headMeta();
+
+$this->headLink()->headLink(array('rel' => 'shortcut icon',
+                            'href' => $this->baseUrl('/favicon.ico'),
+                            'type' => 'image/x-icon'))->headLink(
+                                    array('rel' => 'icon','href' => $this->baseUrl('/favicon.ico'),'type' => 'image/x-icon')
+                                    );
+
+$this->headLink()->appendStylesheet($this->baseUrl('/css/reset.css'));
+
+$this->headLink()->prependStylesheet($this->baseUrl('/css/themes/styles1.css'),'screen',true, array('id' => 'styles1', 'title'=>'styles1'));
+$this->headLink()->appendStylesheet($this->baseUrl('/css/themes/styles2.css'),'screen',true, array('id' => 'styles2', 'title'=>'styles2'));
+$this->headLink()->appendStylesheet($this->baseUrl('/css/themes/styles3.css'),'screen',true, array('id' => 'styles3', 'title'=>'styles3'));
+
+$this->cssHelper(2);
+echo $this->headLink();
+
+
+
+echo $this->headStyle();
+echo $this->headTitle();
+
+
+
+?>
+
+
+</head>
+
+<body>
+<?php
+
+    echo $this->layout()->content;
+    
+       echo $this->jQuery();
+    $this->javascriptHelper();
+
+echo $this->headScript();
+    $this->inlineScript()->appendFile('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js','text/javascript',array('conditional' => 'lt IE 7'));
+    $this->inlineScript()->appendFile($this->baseUrl('/js/jquery.validate.js'),'text/javascript');
+    
+    echo $this->inlineScript();
+    
+?>
+</body>
+</html>
